@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d5e90fa0e7e0a9afc675",
+    "revision": "269a6b8d8eab99814dba",
     "url": "/retail-store-rest-frontend/static/css/main.5f7202f9.chunk.css"
   },
   {
-    "revision": "d5e90fa0e7e0a9afc675",
-    "url": "/retail-store-rest-frontend/static/js/main.d5e90fa0.chunk.js"
+    "revision": "269a6b8d8eab99814dba",
+    "url": "/retail-store-rest-frontend/static/js/main.269a6b8d.chunk.js"
   },
   {
     "revision": "8548251f02429b08224f",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/retail-store-rest-frontend/static/js/runtime~main.e0aa8948.js"
   },
   {
-    "revision": "169b572ff97ffc1ed13e975ef65cb164",
+    "revision": "8b4c266423fdcecad68eb1474e72e914",
     "url": "/retail-store-rest-frontend/index.html"
   }
 ];
