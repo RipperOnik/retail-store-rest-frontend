@@ -1,6 +1,7 @@
 {
   "name": "node-complete-social-network-prep",
   "version": "0.1.0",
+  "homepage": "https://ripperonik.github.io/retail-store-rest-frontend/",
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
