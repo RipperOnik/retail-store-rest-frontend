@@ -26,38 +26,41 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    fetch('https://retail-store-rest-backend.onrender.com/feed/status', {
-      headers: {
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      }
-    })
-      .then(res => {
-        if (res.status !== 200) {
-          throw new Error('Failed to fetch user status.');
+    setTimeout(() => {
+      fetch('https://retail-store-rest-backend.onrender.com/feed/status', {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('token')
         }
-        return res.json();
       })
-      .then(resData => {
-        this.setState({ status: resData.status });
-      })
-      .catch(this.catchError);
+        .then(res => {
+          if (res.status !== 200) {
+            throw new Error('Failed to fetch user status.');
+          }
+          return res.json();
+        })
+        .then(resData => {
+          this.setState({ status: resData.status });
+        })
+        .catch(this.catchError);
 
-    // const socket = io('https://retail-store-rest-backend.onrender.com')
-    const socket = getIO()
-    console.log('Trying to connect to IO...')
-    socket.on('connect', () => {
-      console.log('connected!')
-    })
-    socket.on('posts', data => {
-      if (data.action === 'create') {
-        this.loadPosts()
-      } else if (data.action === 'update') {
-        this.loadPosts()
-      } else if (data.action === 'delete') {
-        this.loadPosts()
-      }
-    })
-    this.loadPosts();
+      // const socket = io('https://retail-store-rest-backend.onrender.com')
+      const socket = getIO()
+      console.log('Trying to connect to IO...')
+      socket.on('connect', () => {
+        console.log('connected!')
+      })
+      socket.on('posts', data => {
+        if (data.action === 'create') {
+          this.loadPosts()
+        } else if (data.action === 'update') {
+          this.loadPosts()
+        } else if (data.action === 'delete') {
+          this.loadPosts()
+        }
+      })
+      this.loadPosts();
+    }, 1000)
+
   }
 
   loadPosts = direction => {
