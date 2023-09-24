@@ -6,7 +6,7 @@ export function getIO() {
     if (socket) {
         return socket
     } else {
-        socket = io('http://localhost:8080')
+        socket = io('https://retail-store-rest-backend.onrender.com')
         return socket
     }
 }
